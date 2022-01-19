@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  simple-todo-db:
+    image: "postgres:11.8"
+    volumes:
+      - ./data:/var/lib/postgresql/data
+      - ./init:/docker-entrypoint-initdb.d
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=wetcoding
+      - POSTGRES_PASSWORD=admin

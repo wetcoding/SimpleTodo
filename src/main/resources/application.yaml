@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://${db.host}:${db.port}/todo_list
+    username: ${db.username}
+    password: ${db.password}
+  liquibase:
+    enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    database-platform: org.hibernate.dialect.PostgreSQL95Dialect
