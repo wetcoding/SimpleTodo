@@ -12,7 +12,6 @@ import javax.persistence.Enumerated;
 @Getter
 @Setter
 public class TodoItem extends BaseEntity{
-    private String title;
     private String body;
     @Enumerated(EnumType.STRING)
     private TodoItemStatus status;

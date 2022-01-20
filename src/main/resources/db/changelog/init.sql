@@ -27,9 +27,6 @@ create table todo_item
     created  timestamp    NOT NULL,
     modified timestamp    NOT NULL,
     version  int          NOT NULL,
-    title    varchar(255) NOT NULL,
     body     text,
-    status   varchar(255) NOT NULL,
-    user_id  bigint       NOT NULL
-        CONSTRAINT fk_user_id REFERENCES user_info
+    status   varchar(255) NOT NULL
 )
