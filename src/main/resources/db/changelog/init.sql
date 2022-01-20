@@ -20,7 +20,7 @@ create table user_info
 create index idx_user_email on user_info (email);
 
 --changeset ravil.mashakaev:create-todo-list-table
-create table todo_list
+create table todo_item
 (
     id       bigint
         CONSTRAINT pk_todo_list PRIMARY KEY,
