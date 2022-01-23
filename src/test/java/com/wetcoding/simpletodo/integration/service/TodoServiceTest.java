@@ -45,9 +45,8 @@ class TodoServiceTest extends AbstractIntegrationTest {
         TodoItem todoItem = new TodoItem();
         todoItem.setBody("Test");
         todoItem.setStatus(TodoItemStatus.CREATED);
-        todoItemRepository.save(todoItem);
 
-        Long expectedId = todoItemRepository.findAll().stream().findFirst().orElseThrow().getId();
+        Long expectedId = todoItemRepository.save(todoItem).getId();
 
         TodoItemDto item = todoService.getItem(expectedId);
 
@@ -60,9 +59,8 @@ class TodoServiceTest extends AbstractIntegrationTest {
         TodoItem todoItem = new TodoItem();
         todoItem.setBody("Test");
         todoItem.setStatus(TodoItemStatus.CREATED);
-        todoItemRepository.save(todoItem);
 
-        Long expectedId = todoItemRepository.findAll().stream().findFirst().orElseThrow().getId();
+        Long expectedId = todoItemRepository.save(todoItem).getId();
 
         todoService.updateItem(expectedId, "New text");
 
@@ -89,9 +87,8 @@ class TodoServiceTest extends AbstractIntegrationTest {
         TodoItem todoItem = new TodoItem();
         todoItem.setBody("Test");
         todoItem.setStatus(TodoItemStatus.CREATED);
-        todoItemRepository.save(todoItem);
 
-        Long expectedId = todoItemRepository.findAll().stream().findFirst().orElseThrow().getId();
+        Long expectedId = todoItemRepository.save(todoItem).getId();
 
         todoService.deleteItem(expectedId);
 
